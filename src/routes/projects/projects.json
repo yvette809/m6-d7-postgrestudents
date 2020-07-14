@@ -1,0 +1,59 @@
+{
+    "data": [
+        {
+            "_id": "5f07246d7a68b53e406ddfa1",
+            "name": "greatest project",
+            "description": "superb",
+            "repoURL": "http:/git.com",
+            "liveURL": "http:/live.com",
+            "studentID": "5f046aaeaad365d981731cda",
+            "__v": 0
+        },
+        {
+            "_id": "5f07259bb064722e9078977f",
+            "name": "good project",
+            "description": "i love it",
+            "repoURL": "http:/git.com",
+            "liveURL": "http:/live.com",
+            "studentID": "5f05e24e1fe4221b403e0258",
+            "__v": 0
+        },
+        {
+            "_id": "5f0725f036ccdc035897d059",
+            "name": "greatest project",
+            "description": "superb",
+            "repoURL": "http:/git.com",
+            "liveURL": "http:/live.com",
+            "studentID": "5f05e1fd1fe4221b403e0256",
+            "__v": 0
+        },
+        {
+            "_id": "5f07262b28919042a8e4fc07",
+            "name": "greatest project",
+            "description": "superb",
+            "repoURL": "http:/git.com",
+            "liveURL": "http:/live.com",
+            "studentID": "5f05e8ec0f15d93b4024887a",
+            "__v": 0
+        },
+        {
+            "_id": "5f0726cf2499e722e8a5b3cd",
+            "name": "greatest project",
+            "description": "superb",
+            "repoURL": "http:/git.com",
+            "liveURL": "http:/live.com",
+            "studentID": "5f05e24e1fe4221b403e0258",
+            "__v": 0
+        },
+        {
+            "_id": "5f07285cba98914200c321a7",
+            "name": "good project",
+            "description": "meh",
+            "repoURL": "http:/git.com",
+            "liveURL": "http:/live.com",
+            "studentID": "5f05e24e1fe4221b403e0258",
+            "__v": 0
+        }
+    ],
+    "total": 6
+}
