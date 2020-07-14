@@ -4,97 +4,80 @@
         "name": "Arbiona",
         "surname": "Shahu",
         "email": "a@gmail.com",
-        "dateOfBirth": "19-05-1989",
-        "country": "Albania",
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-U0112FGP7DZ-6f7cd9ae030e-512"
+        "dateOfBirth": "1989-05-02"
+        
     },
     {
         "_id": "1",
         "name": "\"yvette\"",
         "surname": "Tanila",
         "email": "evebabe2006@yahoo.com",
-        "dateOfBirth": "02-05-2002",
-        "country": "Sweden",
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-UV4R9CAQG-f3648f81395e-512"
+        "dateOfBirth": "2002-05-02"
+        
     },
     {
         "_id": "6",
         "name": "Eriseld",
         "surname": "kosta",
         "email": "abongho2018@gmail.com",
-        "dateOfBirth": "19-06-2000",
-        "country": "Canada",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-U010WC14UDB-2728fdbe2d76-512"
+        "dateOfBirth": "2000-02-15"
     },
+        
     {
         "_id": "7",
         "name": "Ubeyt",
         "surname": "Demir",
         "email": "terrel2018@gmail.com",
-        "dateOfBirth": "16-04-2016",
-        "country": "Turkey",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-UUB5AM4E9-171191933c92-512"
+        "dateOfBirth": "2016-04-16"
+        
     },
     {
         "_id": "8",
         "name": "Hafeez",
         "surname": "Shiji",
         "email": "ayeng2018@gmail.com",
-        "dateOfBirth": "23-09-1989",
-        "country": "Cameroon",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-UV6SELNPJ-cd8b0842a066-512"
+        "dateOfBirth": "1989-09-23"
+       
     },
     {
         "_id": "9",
         "name": "Tetiana",
         "surname": "Yaremko",
         "email": "terry2001@gmail.com",
-        "dateOfBirth": "05-02-2009",
-        "country": "sweden",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-UTR82S5QB-271348332cf4-512"
+        "dateOfBirth": "2009-05-03"
+        
     },
     {
         "_id": "10",
         "name": "Diego",
         "surname": "Banovaz",
         "email": "adel2001@gmail.com",
-        "dateOfBirth": "16-02-2009",
-        "country": "Germany",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-UJQKLH1HV-494c924b5c2a-512"
+        "dateOfBirth": "2009-03-12"
+        
     },
     {
         "_id": "11",
         "name": "Klevin",
         "surname": "Bazaiti",
         "email": "lovema@gmail.com",
-        "dateOfBirth": "16-02-2004",
-        "country": "Germany",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-U011F3QMG30-6ad744b863dc-512"
+        "dateOfBirth": "2004-02-04"
+        
     },
     {
         "_id": "12",
         "name": "Marigona",
         "surname": "Nuhija",
         "email": "esu1999@yahoo.com",
-        "dateOfBirth": "04-05-2009",
-        "country": "America",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-UV1HP67C7-75c69f2e7299-512"
+        "dateOfBirth": "2009-07-05"
+        
     },
     {
         "_id": "12",
         "name": "Ervins",
         "surname": "Zagar",
         "email": "evala@yahoo.com",
-        "dateOfBirth": "09-05-2009",
-        "country": "America",
-        "__v": 0,
-        "image": "https://ca.slack-edge.com/TJNQP8XCG-U0114EQBV08-0c6c74f868e3-512"
+        "dateOfBirth": "2009-06-07"
+        
+        
     }
 ]
