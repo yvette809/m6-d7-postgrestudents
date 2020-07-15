@@ -1,7 +1,7 @@
 const express = require("express")
 const db = require('../../db')
 const students = require ('./students.json')
-const { request } = require("express")
+
 const studRouter = express.Router()
 
 //import students from students.json and upload in to our database
@@ -32,12 +32,14 @@ studRouter.post('/import', async(req,res)=>{
 
 // get students
 
-studRouter.get('/', async (req,res)=>{
+studRouter.get("/", async (req,res)=>{
+    console.log("database")
     const response = await db.query('SELECT * FROM "students"')
+   
     res.send(response.rows)
 })
 
-// get students plus filtering,pagination etc
+ //get students plus filtering,pagination etc
 studRouter.get('/', async (req,res)=>{
     const order = req.query.order || "asc"
     const offset = req.query.offset || 0
@@ -115,6 +117,7 @@ studRouter.delete("/", async(req,res)=>{
         res.send('Deleted')
     }
 })
+
 
 
 module.exports= studRouter
