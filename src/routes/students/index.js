@@ -91,7 +91,19 @@ studRouter.post("/", async(req,res)=>{
 })
 
 // check student's email before posting
-s
+studRouter.post("/checkemail", async (req,res)=>{
+    const response = await db.query(`SELECT * from "students" WHERE email=$1`,[req.body.email])
+    if(response.rowCount> 0){
+        res.send("Email already exists")
+    }else{
+        const response = await db.query(`INSERT INTO "students"(_id,name,surname,email,dateOfBirth)
+                                                            values($1,$2,$3,$4,$5)
+                                                             RETURNING *`,
+                                                              [req.body._id,req.body.name,req.body.surname,req.body.email,req.body.dateOfBirth])
+        console.log(response)
+        res.send(response.rows[0])            
+    }
+})
 // update a student
 studRouter.put('/:_id', async(req,res)=>{
     try{
