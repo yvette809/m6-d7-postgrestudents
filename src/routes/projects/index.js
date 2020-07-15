@@ -33,6 +33,14 @@ projRouter.delete("/:_id", async(req,res)=>{
     }
 })
 
+// create a new project
+projRouter.post("/",async(req,res)=>{
+    const response = await db.query(`INSERT INTO "projects" (_id,name,description,creationDate,studentID)
+                                                                          values ($1,$2,$3,$4,$5)
+                                                                            RETURNING *`,
+                 [req.body._id, req.body.name,req.body.description, req.body.creationDate,req.body.studentID])
+                 res.send(response.rows[0])
+})
 
 
 
