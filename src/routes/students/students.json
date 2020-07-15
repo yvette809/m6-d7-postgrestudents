@@ -7,14 +7,7 @@
         "dateOfBirth": "1989-05-02"
         
     },
-    {
-        "_id": "1",
-        "name": "\"yvette\"",
-        "surname": "Tanila",
-        "email": "evebabe2006@yahoo.com",
-        "dateOfBirth": "2002-05-02"
-        
-    },
+    
     {
         "_id": "6",
         "name": "Eriseld",
@@ -72,7 +65,7 @@
         
     },
     {
-        "_id": "12",
+        "_id": "13",
         "name": "Ervins",
         "surname": "Zagar",
         "email": "evala@yahoo.com",

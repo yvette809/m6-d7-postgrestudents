@@ -1,6 +1,7 @@
 const express = require("express")
 const db = require('../../db')
 const students = require ('./students.json')
+const { request } = require("express")
 const studRouter = express.Router()
 
 //import students from students.json and upload in to our database
@@ -29,11 +30,42 @@ studRouter.post('/import', async(req,res)=>{
         })
 })
 
+// get students
 
 studRouter.get('/', async (req,res)=>{
     const response = await db.query('SELECT * FROM "students"')
     res.send(response.rows)
 })
+
+// get students plus filtering,pagination etc
+studRouter.get('/', async (req,res)=>{
+    const order = req.query.order || "asc"
+    const offset = req.query.offset || 0
+    const limit = req.query.limit|| 5
+
+    delete req.query.order
+    delete req.query.offset
+    delete req.query.limit
+
+    let query = 'SELECT * FROM "students"'
+    const params = []
+    for(queryParam in req.query){
+        params.push(req.query[queryParam])
+        if(params.length===1){
+            query += `WHERE ${queryParam} = $${params.length}`
+        }else{
+            query+= `AND ${queryParam} =$${params.length}`
+        }
+    }
+    query+= "ORDER BY Title" + order
+    query+= `LIMIT $${params.length +1} OFFSET $${params.length + 2}`
+    params.push(limit)
+    params.push(offset)
+    console.log(query)
+    const response = await db.query('SELECT * FROM "students"')
+    res.send(response.rows)
+})
+
 
 // get a single student
 
