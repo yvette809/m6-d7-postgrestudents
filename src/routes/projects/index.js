@@ -23,6 +23,9 @@ projRouter.get("/:_id", async(req,res)=>{
 
 })
 
+// update a project
+
+
 // delete a single project
 projRouter.delete("/:_id", async(req,res)=>{
     const response = await db.query(`DELETE from "projects" WHERE _id =$1`,[req.params._id])
