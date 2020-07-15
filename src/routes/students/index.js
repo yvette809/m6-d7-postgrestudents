@@ -123,7 +123,7 @@ studRouter.put('/:_id', async(req,res)=>{
 })
 
 // delete a student
-studRouter.delete("/", async(req,res)=>{
+studRouter.delete("/:_id", async(req,res)=>{
     const response = await db.query(`DELETE FROM "students" WHERE _id = $1`,[req.params._id] )
     if(response.rowCount===0){
     return res.status(404).send("Not Found")
