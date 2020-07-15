@@ -90,6 +90,8 @@ studRouter.post("/", async(req,res)=>{
         res.send(response.rows[0])                                                      
 })
 
+// check student's email before posting
+s
 // update a student
 studRouter.put('/:_id', async(req,res)=>{
     try{
