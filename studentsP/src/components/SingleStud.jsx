@@ -22,8 +22,8 @@ function  SingleStud (props){
     <td>{stud.surname}</td>
     <td>{stud.email}</td>
     <td>{stud.dateofbirth}</td>
-    <td><Button variant = "danger" onClick ={()=> this.deleteStudent(stud._id)}>Delete</Button></td>
-    {/* <td><Button onClick = {this.editStudent}>Edit</Button></td> */}
+    <td><Button variant = "danger" onClick ={()=> props.deleteStudent(stud._id)}>Delete</Button></td>
+    <td><Button onClick = {()=>this.editStudent}>Edit</Button></td>
   </tr>
 </tbody>
     

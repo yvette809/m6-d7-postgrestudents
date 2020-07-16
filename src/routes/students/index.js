@@ -32,12 +32,12 @@ studRouter.post('/import', async(req,res)=>{
 
 // get students
 
-studRouter.get("/", async (req,res)=>{
-    console.log("database")
-    const response = await db.query('SELECT * FROM "students"')
+// studRouter.get("/", async (req,res)=>{
+//     console.log("database")
+//     const response = await db.query('SELECT * FROM "students"')
    
-    res.send(response.rows)
-})
+//     res.send(response.rows)
+// })
 
  //get students plus filtering,pagination etc
 studRouter.get('/', async (req,res)=>{
@@ -60,8 +60,9 @@ studRouter.get('/', async (req,res)=>{
         }
     }
     query+= "ORDER BY Title" + order
-    query+= `LIMIT $${params.length +1} OFFSET $${params.length + 2}`
     params.push(limit)
+    query+= `LIMIT $${params.length } `
+   
     params.push(offset)
     console.log(query)
     const response = await db.query('SELECT * FROM "students"')
