@@ -16,13 +16,13 @@ class Students extends React.Component{
         dateOfBirth:''
         },
         page:0,
-        pageSize:10
+        pageSize:8
         
     }
 
    
     fetchData = async()=>{
-        const response = await fetch (`http://localhost:3050/students?limit=${this.state.pageSize}&offset=${this.state.page * this.state.pageSize}`)
+        const response = await fetch (`http://localhost:3040/students`)
         if(response.ok){
             const students = await response.json()
             this.setState({students:students})
@@ -46,7 +46,7 @@ class Students extends React.Component{
     }
 
     deleteStudent = async (_id) =>{
-        const response = await fetch("http://localhost:3050/students/" + _id, {
+        const response = await fetch("http://localhost:3040/students/" + _id, {
             method: "DELETE"
         })
         if (response.ok){
@@ -62,7 +62,7 @@ class Students extends React.Component{
         const update = this.state.editingStudent
    
 
-    const booksResp = await fetch("http://localhost:3050/students/" + this.state.editingStudent._id, {
+    const booksResp = await fetch("http://localhost:3040/students/" + this.state.editingStudent._id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -95,7 +95,7 @@ class Students extends React.Component{
             <SingleStud
             data = {this.state.students}
             deleteStudent = {(_id) => this.deleteStudent(_id)}
-            
+            editStudent={this.editStudent}
             />
             </>
         )

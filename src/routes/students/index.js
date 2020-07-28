@@ -30,14 +30,14 @@ studRouter.post('/import', async(req,res)=>{
         })
 })
 
-// get students
+//get students
 
-// studRouter.get("/", async (req,res)=>{
-//     console.log("database")
-//     const response = await db.query('SELECT * FROM "students"')
+studRouter.get("/", async (req,res)=>{
+    console.log("database")
+    const response = await db.query('SELECT * FROM "students"')
    
-//     res.send(response.rows)
-// })
+    res.send(response.rows)
+})
 
  //get students plus filtering,pagination etc
 studRouter.get('/', async (req,res)=>{
@@ -132,6 +132,7 @@ studRouter.delete("/:_id", async(req,res)=>{
         res.send('Deleted')
     }
 })
+
 
 
 

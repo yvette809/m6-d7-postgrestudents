@@ -11,6 +11,7 @@ function  SingleStud (props){
       <th scope="col">Surname</th>
       <th scope="col">Email</th>
       <th scope="col">Date of Birth</th>
+      <th scope="col">projects</th>
      
     </tr>
   </thead>
@@ -21,7 +22,8 @@ function  SingleStud (props){
     <td>{stud.name}</td>
     <td>{stud.surname}</td>
     <td>{stud.email}</td>
-    <td>{stud.dateofbirth}</td>
+    <td>{stud.dateOfBirth}</td>
+    <td>{stud.projects.slice(0,5)}</td>
     <td><Button variant = "danger" onClick ={()=> props.deleteStudent(stud._id)}>Delete</Button></td>
     <td><Button onClick = {()=>this.editStudent}>Edit</Button></td>
   </tr>
