@@ -58,30 +58,30 @@ class Students extends React.Component{
         }
     }
 
-    editStudent = async () =>{
-        const update = this.state.editingStudent
+    // editStudent = async () =>{
+    //     const update = this.state.editingStudent
    
 
-    const booksResp = await fetch("http://localhost:3040/students/" + this.state.editingStudent._id, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(update)
-    })
-    const student = await booksResp.json()
-    console.log(student)
-    this.setState({
-        editingStudent:{
-            _id:this.state.editingStudent._id,
-            name:this.state.editingStudent.name,
-            surname:this.state.editinStudent.surname,
-            email:this.state.editingStudent.email,
-            dateOfBirth:this.state.editingStudent.dateOfBirth
-            },
-    })
+    // const booksResp = await fetch("http://localhost:3040/students/" + this.state.editingStudent._id, {
+    //     method: "PUT",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(update)
+    // })
+    // const student = await booksResp.json()
+    // console.log(student)
+    // this.setState({
+    //     editingStudent:{
+    //         _id:this.state.editingStudent._id,
+    //         name:this.state.editingStudent.name,
+    //         surname:this.state.editinStudent.surname,
+    //         email:this.state.editingStudent.email,
+    //         dateOfBirth:this.state.editingStudent.dateOfBirth
+    //         },
+    // })
    
-    }
+    // }
 
 
 
@@ -95,7 +95,7 @@ class Students extends React.Component{
             <SingleStud
             data = {this.state.students}
             deleteStudent = {(_id) => this.deleteStudent(_id)}
-            editStudent={this.editStudent}
+            // editStudent={this.editStudent}
             />
             </>
         )

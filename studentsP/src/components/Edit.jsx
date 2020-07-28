@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Modal,Form, Button} from 'react-bootstrap'
 
 
 class Edit extends React.Component{
@@ -11,7 +11,9 @@ class Edit extends React.Component{
             email:'',
             dateOfBirth:''
             },
+        showModal: false
 
+        
     }
 
     editStudent = async () =>{
@@ -39,10 +41,75 @@ class Edit extends React.Component{
    
     }
 
+    handleChange = (e)=> {
+        let editingStudent = this.state.editingStudent
+        console.log(e.currentTarget)
+        let currentId = e.currentTarget.id
+        editingStudent[currentId]= e.currentTarget.value
+        this.setState({editingStudent})
+      }
+
     render(){
         return(
-            
+           <>
+            <Modal
+     show ={this.state.showModal}
+     
+      // onHide = {() => this.setState({selected:!this.state.showModal})}
+      >
+  <Modal.Header closeButton  onClick={() => this.setState({showModal:false})} className = 'mr-5 justify-content-end'>
+    <Modal.Title>Students</Modal.Title>
+  </Modal.Header>
+
+  <Modal.Body>
+    <div>
+      <h5>Edit Student</h5>
+    </div>
+    <div>
+    <Form onSubmit = {this.editStudent}>
+    <Form.Control 
+    type="text"
+    name="name" 
+    id = "name"
+    placeholder="Enter name"
+    value = {this.state.editingStudent.name}
+    onChange= {this.handleChange}
+    />
+    <Form.Control 
+    type="text" 
+    id = "surname"
+    placeholder="Enter surname"
+    value = {this.state.editingStudent.surname}
+    onChange= {this.handleChange}
+    />
+    <Form.Control 
+    type="email" 
+    id = "email"
+    placeholder="Enter email"
+    value = {this.state.editingStudent.email}
+    onChange= {this.handleChange}
+    />
+    <Form.Control 
+    type="Date" 
+    id = "dateOfBirth"
+    placeholder="Choose Date Of Birth"
+    value = {this.state.editingStudent.dateOfBirth}
+    onChange= {this.handleChange}
+    /> 
+  <Button variant="primary" type="submit" onClick = {this.editStudent}>
+    Submit
+  </Button>
+</Form>
+    </div>
+  </Modal.Body>
+</Modal>
+<Button onClick={() => this.setState({showModal:true})}> Edit Student</Button>
+</>
+
         )
 
     }
 }
+
+
+export default Edit
