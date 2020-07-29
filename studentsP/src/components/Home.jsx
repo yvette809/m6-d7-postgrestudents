@@ -1,13 +1,15 @@
 import React from 'react'
 import SingleStud from './SingleStud'
 import{Row,Button} from 'react-bootstrap'
+import SingleProj from './SingleProj'
  
 
 
 
-class Students extends React.Component{
+class Home extends React.Component{
     state={
         students:[],
+        projects:[],
         editingStudent:{
         _id:'',
         name:'',
@@ -17,6 +19,7 @@ class Students extends React.Component{
         },
         page:0,
         pageSize:8
+
         
     }
 
@@ -45,6 +48,22 @@ class Students extends React.Component{
 
     }
 
+    // get all projects
+    fetchProjects = async()=>{
+        const response = await fetch (`http://localhost:3040/projects`)
+        if(response.ok){
+            const projects = await response.json()
+            this.setState({projects:projects.data})
+        }else{
+            alert('something went wrong')
+        }
+    }
+
+    componentWillMount = async ()=>{
+       await this.fetchProjects()
+    }
+
+
     deleteStudent = async (_id) =>{
         const response = await fetch("http://localhost:3040/students/" + _id, {
             method: "DELETE"
@@ -58,32 +77,20 @@ class Students extends React.Component{
         }
     }
 
-    // editStudent = async () =>{
-    //     const update = this.state.editingStudent
-   
+    deleteProject = async (_id) =>{
+        const response = await fetch("http://localhost:3040/projects/" + _id, {
+            method: "DELETE"
+        })
+        if (response.ok){
+            //this.props.removeStudent(_id)
+            //const students = await response.json()
+            this.setState({projects:this.state.projects.filter(x => x._id !== _id)})
+        }else{
+            alert('cannot delete project')
+        }
+    }
 
-    // const booksResp = await fetch("http://localhost:3040/students/" + this.state.editingStudent._id, {
-    //     method: "PUT",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(update)
-    // })
-    // const student = await booksResp.json()
-    // console.log(student)
-    // this.setState({
-    //     editingStudent:{
-    //         _id:this.state.editingStudent._id,
-    //         name:this.state.editingStudent.name,
-    //         surname:this.state.editinStudent.surname,
-    //         email:this.state.editingStudent.email,
-    //         dateOfBirth:this.state.editingStudent.dateOfBirth
-    //         },
-    // })
-   
-    // }
-
-
+    
 
     render(){
         return(
@@ -97,10 +104,15 @@ class Students extends React.Component{
             deleteStudent = {(_id) => this.deleteStudent(_id)}
             // editStudent={this.editStudent}
             />
+            <SingleProj 
+            info= {this.state.projects}
+            deleteProject ={(_id)=> this.deleteProject(_id)}
+
+              />
             </>
         )
 
     }
 }
 
-export default Students
+export default Home

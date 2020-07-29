@@ -41,6 +41,13 @@ class Edit extends React.Component{
    
     }
 
+//     componentDidUpdate(prevProps, prevState)
+//  {    
+//        if (prevProps.student !== this.props.student) {   
+//             this.setState({ editingStudent:editingStudent})
+//          }
+// }
+
     handleChange = (e)=> {
         let editingStudent = this.state.editingStudent
         console.log(e.currentTarget)

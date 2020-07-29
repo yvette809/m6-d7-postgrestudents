@@ -5,6 +5,8 @@ class SingleStud extends React.Component{
  
   render(){
     return(
+      <>
+     <div><h2>List of Students</h2></div>
       <table class="table">
 <thead>
   <tr>
@@ -13,27 +15,27 @@ class SingleStud extends React.Component{
     <th scope="col">Surname</th>
     <th scope="col">Email</th>
     <th scope="col">Date of Birth</th>
-    <th scope="col">projects</th>
+   
    
   </tr>
 </thead>
 {this.props.data.map(stud =>
 <tbody>
 <tr>
-  <th>{stud._id}</th>
+  <td>{stud._id}</td>
   <td>{stud.name}</td>
   <td>{stud.surname}</td>
   <td>{stud.email}</td>
   <td>{stud.dateOfBirth}</td>
-  <td>{stud.projects.slice(0,5)}</td>
   <td><Button variant = "danger" onClick ={()=> this.props.deleteStudent(stud._id)}>Delete</Button></td>
-  <td><Edit/></td>
+  {/* <td><Edit student = {stud._id}/></td> */}
 </tr>
 </tbody>
   
   )}
 
 </table>
+</>
   )
   }
 }

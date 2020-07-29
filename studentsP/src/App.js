@@ -1,14 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Students from './components/Students'
+import Home from './components/Home'
 
 
 function App() {
   return (
     <>
    
-    <Students/>
+    <Home/>
     </>
   );
 }
