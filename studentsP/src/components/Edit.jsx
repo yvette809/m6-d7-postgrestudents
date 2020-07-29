@@ -59,10 +59,9 @@ class Edit extends React.Component{
     render(){
         return(
            <>
-            <Modal
+     <Modal
      show ={this.state.showModal}
      
-      // onHide = {() => this.setState({selected:!this.state.showModal})}
       >
   <Modal.Header closeButton  onClick={() => this.setState({showModal:false})} className = 'mr-5 justify-content-end'>
     <Modal.Title>Students</Modal.Title>

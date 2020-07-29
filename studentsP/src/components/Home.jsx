@@ -1,6 +1,6 @@
 import React from 'react'
 import SingleStud from './SingleStud'
-import{Row,Button} from 'react-bootstrap'
+import{Row,Button,Container} from 'react-bootstrap'
 import SingleProj from './SingleProj'
  
 
@@ -95,10 +95,15 @@ class Home extends React.Component{
     render(){
         return(
             <>
-            <Row className = "my-4 justify-content-center">
+            <Container>
+            <div className= "mb-4 mt-2 intro">Welcome to my student Portfolio page. In this page, you will find information of different students and their
+            projects. By clicking ont the students names, you will be directed to thei details
+            </div>
+             <h2>List of Students</h2>
+            {/* <Row className = "my-4 justify-content-center">
             {this.state.page>0 &&<Button variant= "success" onClick = {()=> this.setPage(this.state.page-1)}>1</Button>}
             <Button variant= "success" onClick = {()=> this.setPage(this.state.page+1)}>2</Button>
-            </Row>
+            </Row> */}
             <SingleStud
             data = {this.state.students}
             deleteStudent = {(_id) => this.deleteStudent(_id)}
@@ -109,6 +114,7 @@ class Home extends React.Component{
             deleteProject ={(_id)=> this.deleteProject(_id)}
 
               />
+              </Container>
             </>
         )
 
